@@ -2,7 +2,7 @@ import React from 'react';
 import "./TShirt.css"
 
 const TShirt = ({shirt, handleAddToCart}) => {
-    const {picture, name, price} = shirt;
+    const {id, picture, name, price} = shirt;
 
     return (
         <div className='tshirt'>

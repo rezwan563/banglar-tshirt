@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import TShirt from '../TShirt/TShirt';
 import Cart from '../Cart/Cart';
@@ -6,7 +6,11 @@ import "./Home.css"
 
 const Home = () => {
     const shirtData = useLoaderData();
-    console.log(shirtData);
+    const [cart, setCart] = useState([]);
+
+    const handleAddToCart = tshirt =>{
+        console.log(tshirt);
+    }
     return (
         <div className='home-container'>
             <div className='tshirts-container'>
@@ -14,6 +18,7 @@ const Home = () => {
                     shirtData.map(shirt => <TShirt
                         key={shirt._id}
                         shirt={shirt}
+                        handleAddToCart={handleAddToCart}
                     ></TShirt>)
                 }
             </div>
